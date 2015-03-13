@@ -29,9 +29,9 @@ ko.bindingHandlers.quill = {
       toolbarSelector = params["toolbar"];
 
       if (htmlObservable) {
-        quill.setHTML(ko.unwrap(htmlObservable));
+        quill.setHTML(ko.unwrap(htmlObservable) || "");
       } else if (textObservable) {
-        quill.setText(ko.unwrap(textObservable));
+        quill.setText(ko.unwrap(textObservable) || "");
       }
       if (toolbarSelector) {
         quill.addModule("toolbar", { container: toolbarSelector });
@@ -67,9 +67,9 @@ ko.bindingHandlers.quill = {
     var quill = $.data(element, "quill");
     var selection = quill.getSelection();
     if (htmlObservable) {
-      quill.setHTML(ko.unwrap(htmlObservable));
+      quill.setHTML(ko.unwrap(htmlObservable) || "");
     } else if (textObservable) {
-      quill.setText(ko.unwrap(textObservable));
+      quill.setText(ko.unwrap(textObservable) || "");
     }
     if (enableObservable) {
       quill.editor.enable(ko.unwrap(enableObservable));

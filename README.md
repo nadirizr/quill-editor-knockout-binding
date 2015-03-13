@@ -32,7 +32,7 @@ This plugin allows to use the binding 'quill' to do one of the following:
 
 <script>
   var model = { htmlObservable: ko.observable("<strong>Quill!</strong>"),
-                textObservable: null,  // Use either textObservable or htmlObservable, not both.
+                textObservable: ko.observable(),  // htmlObservable supercedes textObservable.
                 enableObservable: ko.observable(true) };
   ko.applyBindings(model);
 </script>
@@ -46,5 +46,8 @@ There are several configurable parameters and observables when using the 'quill'
 - enable: A boolean or an observable that will control whether the Quill Editor is enabled.
 
 ## Notes
-- You shouldn't use both the 'html' and 'text' parameters at the same time, as
-  the two override each other.
+- If you use both 'html' and 'text' observables, both are updated when changes
+  are made in the editor, but only 'html' data changes will be reflected in the
+  editor.
+- If you use only a 'text' observable, changes to it will of course be reflected
+  as usual in the editor.

@@ -7,7 +7,7 @@ ko.bindingHandlers.quill = {
     if (!(ko.isObservable(params) || params["html"] || params["text"])) {
       throw ("You need to define an observable value for the 'quill' binding. " +
              "Either pass the observable directly or as the 'html' or 'text' " +
-             "field in the parameters (but not both).");
+             "field in the parameters.");
     }
 
     // Initialize the quill editor, and store it in the data section of the
@@ -30,8 +30,7 @@ ko.bindingHandlers.quill = {
 
       if (htmlObservable) {
         quill.setHTML(ko.unwrap(htmlObservable));
-      }
-      if (textObservable) {
+      } else if (textObservable) {
         quill.setText(ko.unwrap(textObservable));
       }
       if (toolbarSelector) {
@@ -69,8 +68,7 @@ ko.bindingHandlers.quill = {
     var selection = quill.getSelection();
     if (htmlObservable) {
       quill.setHTML(ko.unwrap(htmlObservable));
-    }
-    if (textObservable) {
+    } else if (textObservable) {
       quill.setText(ko.unwrap(textObservable));
     }
     if (enableObservable) {

@@ -44,3 +44,7 @@ There are several configurable parameters and observables when using the 'quill'
 - text: Either a string or an observable that will update the Quill Editor using the <a href="http://quilljs.com/docs/api/#quillprototypesettext">setText</a> method.
 - toolbar: A selector for the toolbar element to use when initializing as documented <a href="http://quilljs.com/docs/modules/toolbar/">here</a>.
 - enable: A boolean or an observable that will control whether the Quill Editor is enabled.
+
+## Notes
+- You shouldn't use both the 'html' and 'text' parameters at the same time, as
+  the two override each other.

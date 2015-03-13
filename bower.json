@@ -1,0 +1,22 @@
+{
+  "name": "quill-editor-knockout-binding",
+  "main": "quill-editor-knockout-binding.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/nadirizr/quill-editor-knockout-binding",
+  "authors": [
+    "Nadir Izrael <nadir.izr@gmail.com>"
+  ],
+  "description": "A knockout binding for the Quill Editor.",
+  "keywords": [
+    "quill",
+    "knockout"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
